@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Data_Rumah_Sakit{
+    protected:
+        string pasien;
+        string dokter_sps;
+        string tgl_kedatangan;
+        string penyakit;
+    public:
+    void Data(){
+        cout<<"----------------------------------"<<endl;
+        cout<<"RUMAH SAKIT IBU ANAK NUSANTARA"<<endl;
+        cout<<"----------------------------------"<<endl;
+
+        cout<<"\nHarap Masukan Data Pasien dengan teliti!"<<endl<<endl;
+        cout<<"\nMasukan nama pasien yang akan berobat    :";
+        getline(cin,pasien);
+        cout<<"\nMasukan tanggal janji dengan dokter      :";
+        getline(cin,tgl_kedatangan);
+        cout<<"\nMasukan Penyakit yang diderita    :";
+        getline(cin,penyakit);
+        cout<<"\nMasukan dokter spesialis yang ingin di tuju     :";
+        getline(cin,dokter_sps);
+    }
+    
+    void Tampilan(){
+        cout<<"\nNama Pasien    :"<<pasien<<endl;
+        cout<<"\nTanggal Kedatangan/Janji dengan dokter     :"<<tgl_kedatangan<<endl;
+        cout<<"\nPenyakit yang di derita  :"<<penyakit<<endl;
+        cout<<"\nDokter Spesialis yang ingin dituju    :"<<dokter_sps<<endl;
+    }
+    };
+    
+
+
+class Data_usia : public Data_Rumah_Sakit{
+    private :
+        int usia;
+        public :
+
+        void data_usia(){
+            cout<<"\nMasukan Usia Pasien  :";
+            cin>>usia;
+        }
+        void tampilan_usia(){
+            cout<<"\nUsia pasien ialah    :"<<usia<<endl;
+        }
+};
+
+int main (){
+    Data_usia p1;
+    p1.Data();
+    p1.data_usia();
+    cout<<"============================"<<endl;
+    cout <<"Tampilan informasi pasien!" <<endl;
+    cout<<"============================"<<endl;
+    p1.Tampilan();
+    p1.tampilan_usia();
+
+}
